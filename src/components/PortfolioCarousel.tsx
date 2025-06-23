@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PortfolioCarousel = () => {
   const images = [
@@ -11,48 +11,66 @@ const PortfolioCarousel = () => {
     "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80",
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const getVisibleImages = () => {
+    const prev = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    const next = (currentIndex + 1) % images.length;
+    return [prev, currentIndex, next];
+  };
+
+  const [prevIndex, centerIndex, nextIndex] = getVisibleImages();
+
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-aboreto font-light text-center text-brand-cream tracking-wider mb-4">
+    <section id="portfolio" className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden relative">
+      {/* Portfolio Heading */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+        <h2 className="text-6xl sm:text-7xl lg:text-8xl font-aboreto font-light text-brand-bronze tracking-wider">
           PORTFOLIO
         </h2>
       </div>
 
-      {/* Infinite Scroll Container */}
-      <div className="relative">
-        <div className="flex animate-scroll-left">
-          {/* First set of images */}
-          {images.map((image, index) => (
-            <div key={index} className="flex-shrink-0 mx-4">
-              <div className="w-80 h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
-                <img
-                  src={image}
-                  alt={`Portfolio ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-                {/* Image placeholder icon */}
-                <div className="absolute bottom-4 left-4 w-8 h-8 bg-brand-bronze/20 rounded flex items-center justify-center">
-                  <div className="w-4 h-4 bg-brand-bronze/60 rounded"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-          {/* Duplicate set for infinite scroll */}
-          {images.map((image, index) => (
-            <div key={`duplicate-${index}`} className="flex-shrink-0 mx-4">
-              <div className="w-80 h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
-                <img
-                  src={image}
-                  alt={`Portfolio ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-4 left-4 w-8 h-8 bg-brand-bronze/20 rounded flex items-center justify-center">
-                  <div className="w-4 h-4 bg-brand-bronze/60 rounded"></div>
-                </div>
-              </div>
-            </div>
-          ))}
+      {/* Carousel Container */}
+      <div className="relative flex items-center justify-center h-96">
+        {/* Left Image */}
+        <div className="flex-shrink-0 mx-4 opacity-50 transform scale-75">
+          <div className="w-64 h-80 bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
+            <img
+              src={images[prevIndex]}
+              alt={`Portfolio ${prevIndex + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Center Image (Highlighted) */}
+        <div className="flex-shrink-0 mx-8 z-10">
+          <div className="w-80 h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
+            <img
+              src={images[centerIndex]}
+              alt={`Portfolio ${centerIndex + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="flex-shrink-0 mx-4 opacity-50 transform scale-75">
+          <div className="w-64 h-80 bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
+            <img
+              src={images[nextIndex]}
+              alt={`Portfolio ${nextIndex + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
 

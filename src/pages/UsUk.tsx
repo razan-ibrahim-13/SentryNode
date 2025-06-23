@@ -37,22 +37,22 @@ const UsUk = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen">
       {/* Header */}
-      <div className="bg-teal-900/90 backdrop-blur-sm py-6">
+      <div className="bg-brand-darkGreen/90 backdrop-blur-sm py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <a 
               href="/" 
-              className="flex items-center space-x-2 text-yellow-200 hover:text-yellow-100 transition-colors"
+              className="flex items-center space-x-2 text-brand-cream hover:text-brand-bronze transition-colors"
             >
               <ChevronLeft size={24} />
               <span className="font-light tracking-wide">Back to Home</span>
             </a>
             
             <div className="text-center">
-              <h1 className="text-2xl font-light text-yellow-200 tracking-wider">SoulScript</h1>
-              <p className="text-xs text-yellow-300/80 tracking-widest">WEDDINGS</p>
+              <h1 className="text-2xl font-light text-brand-cream tracking-wider">SoulScript</h1>
+              <p className="text-xs text-brand-bronze tracking-widest">WEDDINGS</p>
             </div>
             
             <div className="w-24"></div> {/* Spacer for center alignment */}
@@ -63,10 +63,10 @@ const UsUk = () => {
       {/* Main Content */}
       <div className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-6xl font-light text-center text-yellow-200 tracking-wider mb-8">
+          <h1 className="text-4xl sm:text-6xl font-light text-center text-brand-cream tracking-wider mb-8">
             US & UK
           </h1>
-          <p className="text-xl text-center text-yellow-100/80 mb-16 max-w-3xl mx-auto font-light">
+          <p className="text-xl text-center text-brand-cream/80 mb-16 max-w-3xl mx-auto font-light">
             Elegant and timeless weddings across the United States and United Kingdom
           </p>
 
@@ -74,16 +74,16 @@ const UsUk = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {westernProjects.map((project, index) => (
               <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative overflow-hidden rounded-lg shadow-2xl bg-teal-700 h-96">
+                <div className="relative overflow-hidden rounded-lg shadow-2xl bg-brand-darkGreen h-96">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-teal-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-darkestGreen/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <h3 className="text-xl font-light tracking-wide mb-2">{project.title}</h3>
-                    <p className="text-yellow-200/80 text-sm tracking-wider">{project.location}</p>
+                    <p className="text-brand-bronze text-sm tracking-wider">{project.location}</p>
                   </div>
                 </div>
               </div>
@@ -92,10 +92,10 @@ const UsUk = () => {
 
           {/* CTA Section */}
           <div className="text-center mt-20">
-            <h3 className="text-2xl font-light text-yellow-200 tracking-wider mb-6">
+            <h3 className="text-2xl font-light text-brand-cream tracking-wider mb-6">
               Planning a destination wedding in the US or UK?
             </h3>
-            <button className="bg-yellow-200/10 text-yellow-200 px-8 py-3 rounded-full border border-yellow-200/30 hover:bg-yellow-200/20 transition-colors tracking-wide">
+            <button className="bg-brand-bronze/10 text-brand-bronze px-8 py-3 rounded-full border border-brand-bronze/30 hover:bg-brand-bronze/20 transition-colors tracking-wide">
               Let's Talk
             </button>
           </div>
