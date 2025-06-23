@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=2000&q=80"
           alt="Wedding Photography"
           className="w-full h-full object-cover grayscale"
         />
@@ -18,7 +18,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="animate-fade-in">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-century-gothic text-brand-cream mb-6 tracking-wider">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-century-gothic font-light text-brand-cream mb-6 tracking-wider">
             SoulScript
           </h1>
           <p className="text-lg sm:text-xl text-brand-bronze mb-8 tracking-widest font-light">

@@ -17,14 +17,14 @@ const InstagramSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-teal-900 to-slate-900">
+    <section className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-yellow-200 tracking-wider mb-16">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-aboreto font-light text-center text-brand-cream tracking-wider mb-16">
           INSTAGRAM
         </h2>
         
         {/* Instagram Grid */}
-        <div className="bg-gradient-to-br from-teal-800/50 to-slate-800/50 rounded-3xl p-8 shadow-2xl">
+        <div className="bg-gradient-to-br from-brand-darkGreen/50 to-brand-darkestGreen/50 rounded-3xl p-8 shadow-2xl">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {instagramImages.map((image, index) => (
               <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
@@ -39,12 +39,12 @@ const InstagramSection = () => {
           
           {/* Instagram Handle */}
           <div className="flex items-center justify-center mt-8 space-x-3">
-            <Instagram className="text-pink-400" size={24} />
+            <Instagram className="text-brand-bronze" size={24} />
             <a 
               href="https://instagram.com/soulscriptinsta" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-yellow-200 hover:text-yellow-100 tracking-wider font-light transition-colors"
+              className="text-brand-cream hover:text-brand-bronze tracking-wider font-light transition-colors"
             >
               SOULSCRIPTINSTA
             </a>

@@ -43,17 +43,17 @@ const TeamSection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-aboreto font-light text-center text-brand-cream tracking-wider mb-16">
           OUR TEAM
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="space-y-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="relative bg-brand-cream/10 rounded-lg p-8 shadow-2xl backdrop-blur-sm border border-brand-cream/20">
-                {/* Portrait - positioned to extend outside the box */}
-                <div className="absolute -top-12 -left-8 w-32 h-32 rounded-full overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-300 border-4 border-brand-bronze">
+                {/* Portrait - positioned to extend outside the box as a cutout */}
+                <div className="absolute -top-16 -left-12 w-40 h-40 rounded-full overflow-hidden shadow-2xl group-hover:scale-105 transition-transform duration-300 border-4 border-brand-bronze bg-brand-cream">
                   <img
                     src={member.image}
                     alt={member.name}
@@ -62,7 +62,7 @@ const TeamSection = () => {
                 </div>
                 
                 {/* Content - positioned to the right of portrait */}
-                <div className="ml-28 pt-4">
+                <div className="ml-32 pt-8">
                   <h3 className="text-2xl font-aboreto text-brand-cream tracking-wider mb-2">
                     {member.name}
                   </h3>
