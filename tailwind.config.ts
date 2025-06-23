@@ -62,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				brand: {
+					bronze: '#B2794C',
+					cream: '#DBB994',
+					darkGreen: '#004D47',
+					darkestGreen: '#001D1B'
 				}
+			},
+			fontFamily: {
+				'century-gothic': ['Century Gothic', 'Arial', 'sans-serif'],
+				'aboreto': ['Aboreto', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -103,13 +113,22 @@ export default {
 					'100%': {
 						transform: 'translateX(-50%)'
 					}
+				},
+				'underline-expand': {
+					'0%': {
+						width: '0%'
+					},
+					'100%': {
+						width: '100%'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'scroll-left': 'scroll-left 30s linear infinite'
+				'scroll-left': 'scroll-left 30s linear infinite',
+				'underline-expand': 'underline-expand 0.3s ease-out'
 			}
 		}
 	},

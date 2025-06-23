@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen">
       <Navbar />
       <HeroSection />
       <PortfolioCarousel />

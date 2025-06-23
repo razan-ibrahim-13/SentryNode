@@ -12,9 +12,9 @@ const PortfolioCarousel = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-b from-teal-900 to-teal-800 overflow-hidden">
+    <section id="portfolio" className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-yellow-200 tracking-wider mb-4">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-aboreto font-light text-center text-brand-cream tracking-wider mb-4">
           PORTFOLIO
         </h2>
       </div>
@@ -25,15 +25,15 @@ const PortfolioCarousel = () => {
           {/* First set of images */}
           {images.map((image, index) => (
             <div key={index} className="flex-shrink-0 mx-4">
-              <div className="w-80 h-96 bg-teal-700 rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
+              <div className="w-80 h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img
                   src={image}
                   alt={`Portfolio ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
                 {/* Image placeholder icon */}
-                <div className="absolute bottom-4 left-4 w-8 h-8 bg-yellow-200/20 rounded flex items-center justify-center">
-                  <div className="w-4 h-4 bg-yellow-200/60 rounded"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 bg-brand-bronze/20 rounded flex items-center justify-center">
+                  <div className="w-4 h-4 bg-brand-bronze/60 rounded"></div>
                 </div>
               </div>
             </div>
@@ -41,14 +41,14 @@ const PortfolioCarousel = () => {
           {/* Duplicate set for infinite scroll */}
           {images.map((image, index) => (
             <div key={`duplicate-${index}`} className="flex-shrink-0 mx-4">
-              <div className="w-80 h-96 bg-teal-700 rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
+              <div className="w-80 h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img
                   src={image}
                   alt={`Portfolio ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-4 left-4 w-8 h-8 bg-yellow-200/20 rounded flex items-center justify-center">
-                  <div className="w-4 h-4 bg-yellow-200/60 rounded"></div>
+                <div className="absolute bottom-4 left-4 w-8 h-8 bg-brand-bronze/20 rounded flex items-center justify-center">
+                  <div className="w-4 h-4 bg-brand-bronze/60 rounded"></div>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ const PortfolioCarousel = () => {
       </div>
 
       <div className="text-center mt-16">
-        <button className="bg-yellow-200/10 text-yellow-200 px-8 py-3 rounded-full border border-yellow-200/30 hover:bg-yellow-200/20 transition-colors tracking-wide">
+        <button className="bg-brand-bronze/10 text-brand-bronze px-8 py-3 rounded-full border border-brand-bronze/30 hover:bg-brand-bronze/20 transition-colors tracking-wide">
           Discover More!
         </button>
       </div>

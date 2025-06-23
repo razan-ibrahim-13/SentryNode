@@ -3,13 +3,13 @@ import React from 'react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-teal-800 to-teal-900">
+    <section id="about" className="py-20 bg-gradient-to-b from-brand-darkestGreen to-brand-darkGreen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-center text-yellow-200 tracking-wider mb-16">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-aboreto font-light text-center text-brand-cream tracking-wider mb-16">
           ABOUT US
         </h2>
         
-        <div className="max-w-4xl mx-auto space-y-8 text-yellow-100/90 leading-relaxed font-light">
+        <div className="max-w-4xl mx-auto space-y-8 text-brand-cream/90 leading-relaxed font-light">
           <p className="text-base sm:text-lg text-center">
             Step into the enchanting world of Soul Scripts, where love stories are woven into timeless tapestries 
             through the art of photography. Our journey began with an extraordinary moment at Thrissur Pooram, 
