@@ -12,12 +12,12 @@ const HeroSection = () => {
           className="w-full h-full object-cover grayscale"
         />
         {/* Translucent Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-darkestGreen/70 via-brand-darkGreen/60 to-brand-darkestGreen/80"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-brand-darkestGreen/70 via-brand-darkGreen/60 to-brand-darkestGreen/80"></div> */}
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div className="animate-fade-in">
+        {/* <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-century-gothic font-light text-brand-cream mb-6 tracking-wider">
             SoulScript
           </h1>
@@ -31,7 +31,7 @@ const HeroSection = () => {
               Where emotions meet artistry, creating memories that last forever.
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll Indicator */}

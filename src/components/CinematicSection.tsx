@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 const CinematicSection = () => {
   return (
@@ -18,11 +17,27 @@ const CinematicSection = () => {
           </div>
 
           {/* Right side - Text */}
-          <div className="text-right">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-brand-cream leading-tight mb-8">
-              TURNING YOUR<br />
-              <span className="text-brand-bronze">DREAMS</span> & <span className="text-brand-bronze">AMBITIONS</span><br />
-              <span className="text-lg sm:text-xl italic font-light">into</span> <span className="text-brand-bronze">CINEMATIC MEMORIES</span>
+          <div className="text-left">
+            <h2 className="text-4xl sm:text-5xl lg:text-4xl font-aboreto font-light text-white leading-tight mb-8 tracking-wide">
+              TURNING YOUR
+              <br />
+              <span className="text-4xl sm:text-5xl lg:text-4xl text-brand-cream tracking-wide">
+                DREAMS
+              </span>
+              <span className="text-lg sm:text-xl italic font-light tracking-wide">
+                {" "}
+                &{" "}
+              </span>
+              <span className="text-4xl sm:text-5xl lg:text-4xl text-brand-cream tracking-wide">
+                AMBITIONS
+              </span>
+              <br />
+              <span className="text-lg sm:text-xl italic font-light tracking-wide">
+                into{" "}
+              </span>
+              <span className="text-4xl sm:text-5xl lg:text-4xl text-brand-cream tracking-wide">
+                CINEMATIC MEMORIES
+              </span>
             </h2>
           </div>
         </div>

@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const PortfolioCarousel = () => {
   const images = [
@@ -30,19 +29,22 @@ const PortfolioCarousel = () => {
   const [prevIndex, centerIndex, nextIndex] = getVisibleImages();
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden relative">
+    <section
+      id="portfolio"
+      className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden relative"
+    >
       {/* Portfolio Heading */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-        <h2 className="text-6xl sm:text-7xl lg:text-8xl font-aboreto font-light text-brand-bronze tracking-wider">
+      <div className="w-full flex justify-center z-20 mb-0">
+        <h2 className="text-6xl sm:text-7xl lg:text-8xl font-aboreto font-light text-brand-cream tracking-wider">
           PORTFOLIO
         </h2>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative flex items-center justify-center h-96">
+      <div className="relative flex items-center justify-center h-[34rem] mt-0">
         {/* Left Image */}
-        <div className="flex-shrink-0 mx-4 opacity-50 transform scale-75">
-          <div className="w-64 h-80 bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
+        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90">
+          <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[prevIndex]}
               alt={`Portfolio ${prevIndex + 1}`}
@@ -52,8 +54,8 @@ const PortfolioCarousel = () => {
         </div>
 
         {/* Center Image (Highlighted) */}
-        <div className="flex-shrink-0 mx-8 z-10">
-          <div className="w-80 h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
+        <div className="flex-shrink-0 mx-2 z-10">
+          <div className="w-[28rem] h-[34rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
             <img
               src={images[centerIndex]}
               alt={`Portfolio ${centerIndex + 1}`}
@@ -63,8 +65,8 @@ const PortfolioCarousel = () => {
         </div>
 
         {/* Right Image */}
-        <div className="flex-shrink-0 mx-4 opacity-50 transform scale-75">
-          <div className="w-64 h-80 bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
+        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90">
+          <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[nextIndex]}
               alt={`Portfolio ${nextIndex + 1}`}
