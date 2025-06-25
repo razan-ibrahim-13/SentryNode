@@ -16,7 +16,7 @@ const PortfolioCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000); // Increased duration for smoother feel
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -32,46 +32,46 @@ const PortfolioCarousel = () => {
   return (
     <section
       id="portfolio"
-      className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden relative"
+      className="h-screen bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden relative flex flex-col justify-center"
     >
       {/* Portfolio Heading */}
-      <div className="w-full flex justify-center z-20 mb-0">
+      <div className="w-full flex justify-center z-20 mb-12">
         <h2 className="text-6xl sm:text-7xl lg:text-8xl font-aboreto font-light text-brand-cream tracking-wider">
           PORTFOLIO
         </h2>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative flex items-center justify-center h-[34rem] mt-0">
+      <div className="relative flex items-center justify-center h-[34rem]">
         {/* Left Image */}
-        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90 transition-all duration-1000 ease-in-out">
+        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-75 transition-all duration-1500 ease-in-out hover:scale-80">
           <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[prevIndex]}
               alt={`Portfolio ${prevIndex + 1}`}
-              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+              className="w-full h-full object-cover transition-all duration-1500 ease-in-out"
             />
           </div>
         </div>
 
         {/* Center Image (Highlighted) */}
-        <div className="flex-shrink-0 mx-2 z-10 transition-all duration-1000 ease-in-out">
+        <div className="flex-shrink-0 mx-2 z-10 transform scale-100 transition-all duration-1500 ease-in-out hover:scale-105">
           <div className="w-[28rem] h-[34rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
             <img
               src={images[centerIndex]}
               alt={`Portfolio ${centerIndex + 1}`}
-              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+              className="w-full h-full object-cover transition-all duration-1500 ease-in-out"
             />
           </div>
         </div>
 
         {/* Right Image */}
-        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90 transition-all duration-1000 ease-in-out">
+        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-75 transition-all duration-1500 ease-in-out hover:scale-80">
           <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[nextIndex]}
               alt={`Portfolio ${nextIndex + 1}`}
-              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+              className="w-full h-full object-cover transition-all duration-1500 ease-in-out"
             />
           </div>
         </div>

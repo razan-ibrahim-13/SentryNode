@@ -1,13 +1,37 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const heroHeight = window.innerHeight; // Height of hero section (100vh)
+      
+      setIsScrolled(scrollY > heroHeight * 0.8); // Transform when 80% past hero
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 bg-transparent ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      isScrolled 
+        ? 'top-4 mx-4' 
+        : 'top-6'
+    }`}>
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-500 ease-in-out ${
+        isScrolled 
+          ? 'bg-brand-darkGreen/80 backdrop-blur-md rounded-2xl shadow-lg' 
+          : 'bg-transparent'
+      }`}>
+        <div className={`flex items-center justify-between transition-all duration-500 ease-in-out ${
+          isScrolled ? 'h-12' : 'h-16'
+        }`}>
           {/* Left Navigation */}
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-8">
@@ -31,10 +55,14 @@ const Navbar = () => {
           {/* Logo - Centered */}
           <div className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2">
             <div className="text-center">
-              <h1 className="text-xl sm:text-2xl font-century-gothic text-brand-cream tracking-widest">
+              <h1 className={`font-century-gothic text-brand-cream tracking-widest transition-all duration-500 ease-in-out ${
+                isScrolled ? 'text-lg' : 'text-xl sm:text-2xl'
+              }`}>
                 SoulScript
               </h1>
-              <p className="text-xs text-brand-bronze tracking-widest">
+              <p className={`text-brand-bronze tracking-widest transition-all duration-500 ease-in-out ${
+                isScrolled ? 'text-[10px]' : 'text-xs'
+              }`}>
                 WEDDINGS
               </p>
             </div>
@@ -81,7 +109,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-brand-darkestGreen/95">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-brand-darkestGreen/95 rounded-b-2xl">
               <a
                 href="#home"
                 className="text-brand-cream hover:text-brand-bronze block px-3 py-2 text-sm font-light tracking-wide"

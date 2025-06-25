@@ -1,8 +1,9 @@
+
 import React from "react";
 
 const CinematicSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-brand-darkestGreen to-brand-darkGreen">
+    <section className="h-screen bg-gradient-to-b from-brand-darkestGreen to-brand-darkGreen flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Image */}
