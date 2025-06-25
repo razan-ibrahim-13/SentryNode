@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 
 const PortfolioCarousel = () => {
@@ -15,7 +16,7 @@ const PortfolioCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 4000); // Increased duration for smoother feel
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -43,34 +44,34 @@ const PortfolioCarousel = () => {
       {/* Carousel Container */}
       <div className="relative flex items-center justify-center h-[34rem] mt-0">
         {/* Left Image */}
-        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90">
+        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90 transition-all duration-1000 ease-in-out">
           <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[prevIndex]}
               alt={`Portfolio ${prevIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
             />
           </div>
         </div>
 
         {/* Center Image (Highlighted) */}
-        <div className="flex-shrink-0 mx-2 z-10">
+        <div className="flex-shrink-0 mx-2 z-10 transition-all duration-1000 ease-in-out">
           <div className="w-[28rem] h-[34rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
             <img
               src={images[centerIndex]}
               alt={`Portfolio ${centerIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
             />
           </div>
         </div>
 
         {/* Right Image */}
-        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90">
+        <div className="flex-shrink-0 mx-1 opacity-50 transform scale-90 transition-all duration-1000 ease-in-out">
           <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[nextIndex]}
               alt={`Portfolio ${nextIndex + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
             />
           </div>
         </div>
