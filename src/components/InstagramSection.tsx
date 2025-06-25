@@ -24,31 +24,29 @@ const InstagramSection = () => {
         </h2>
         
         {/* Instagram Grid */}
-        <div className="bg-gradient-to-br from-brand-darkGreen/50 to-brand-darkestGreen/50 rounded-3xl p-8 shadow-2xl">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {instagramImages.map((image, index) => (
-              <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
-                <img
-                  src={image}
-                  alt={`Instagram post ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          
-          {/* Instagram Handle */}
-          <div className="flex items-center justify-center mt-8 space-x-3">
-            <Instagram className="text-brand-bronze" size={24} />
-            <a 
-              href="https://instagram.com/soulscriptinsta" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-brand-cream hover:text-brand-bronze tracking-wider font-light transition-colors"
-            >
-              SOULSCRIPTINSTA
-            </a>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+          {instagramImages.map((image, index) => (
+            <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+              <img
+                src={image}
+                alt={`Instagram post ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+        
+        {/* Instagram Handle */}
+        <div className="flex items-center justify-center space-x-3">
+          <Instagram className="text-brand-bronze" size={24} />
+          <a 
+            href="https://instagram.com/soulscriptinsta" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-brand-cream hover:text-brand-bronze tracking-wider font-light transition-colors"
+          >
+            SOULSCRIPTINSTA
+          </a>
         </div>
       </div>
     </section>

@@ -32,20 +32,20 @@ const PortfolioCarousel = () => {
   return (
     <section
       id="portfolio"
-      className="h-screen bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden relative flex flex-col justify-center"
+      className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen overflow-hidden"
     >
       {/* Portfolio Heading */}
-      <div className="w-full flex justify-center z-20 mb-12">
+      <div className="w-full flex justify-center mb-12">
         <h2 className="text-6xl sm:text-7xl lg:text-8xl font-aboreto font-light text-brand-cream tracking-wider">
           PORTFOLIO
         </h2>
       </div>
 
       {/* Carousel Container */}
-      <div className="relative flex items-center justify-center h-[34rem]">
+      <div className="relative flex items-center justify-center px-4 py-8">
         {/* Left Image */}
         <div className="flex-shrink-0 mx-1 opacity-50 transform scale-75 transition-all duration-1500 ease-in-out hover:scale-80">
-          <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
+          <div className="w-80 sm:w-96 h-64 sm:h-80 bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[prevIndex]}
               alt={`Portfolio ${prevIndex + 1}`}
@@ -56,7 +56,7 @@ const PortfolioCarousel = () => {
 
         {/* Center Image (Highlighted) */}
         <div className="flex-shrink-0 mx-2 z-10 transform scale-100 transition-all duration-1500 ease-in-out hover:scale-105">
-          <div className="w-[28rem] h-[34rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
+          <div className="w-80 sm:w-[28rem] h-80 sm:h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
             <img
               src={images[centerIndex]}
               alt={`Portfolio ${centerIndex + 1}`}
@@ -67,7 +67,7 @@ const PortfolioCarousel = () => {
 
         {/* Right Image */}
         <div className="flex-shrink-0 mx-1 opacity-50 transform scale-75 transition-all duration-1500 ease-in-out hover:scale-80">
-          <div className="w-96 h-[28rem] bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
+          <div className="w-80 sm:w-96 h-64 sm:h-80 bg-brand-darkGreen rounded-lg overflow-hidden shadow-xl">
             <img
               src={images[nextIndex]}
               alt={`Portfolio ${nextIndex + 1}`}
@@ -77,7 +77,7 @@ const PortfolioCarousel = () => {
         </div>
       </div>
 
-      <div className="text-center mt-16">
+      <div className="text-center mt-8">
         <button className="bg-brand-bronze/10 text-brand-bronze px-8 py-3 rounded-full border border-brand-bronze/30 hover:bg-brand-bronze/20 transition-colors tracking-wide">
           Discover More!
         </button>
