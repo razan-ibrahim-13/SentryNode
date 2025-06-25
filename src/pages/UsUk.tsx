@@ -3,36 +3,48 @@ import React from 'react';
 import { ChevronLeft } from 'lucide-react';
 
 const UsUk = () => {
-  const westernProjects = [
+  const packages = [
     {
-      title: "Countryside Manor Wedding",
-      location: "Cotswolds, UK",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=800&q=80"
+      title: "BASIC PACKAGE",
+      features: [
+        "1 Photographer + 1 Videographer",
+        "Wedding Day Coverage",
+        "80+ Edited Photos",
+        "Highlights Video",
+        "Delivery via Google Drive"
+      ],
+      price: "$$$",
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=800&q=80",
+      position: "right"
     },
     {
-      title: "Modern City Wedding",
-      location: "New York, USA",
-      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80"
+      title: "STANDARD PACKAGE",
+      features: [
+        "2 Photographers + 1 Videographer",
+        "Pre-Wedding Shoot + Engagement + Wedding Day",
+        "200+ Edited Photos",
+        "Full Cinematic Highlight (7-10 Minutes)",
+        "Instagram Reels & Teaser",
+        "Delivery via Custom Google Drive Folder"
+      ],
+      price: "$$$",
+      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80",
+      position: "left"
     },
     {
-      title: "Castle Wedding",
-      location: "Scotland, UK",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Beach Resort Wedding",
-      location: "California, USA",
-      image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Vineyard Wedding",
-      location: "Tuscany, Italy",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Historic Estate Wedding",
-      location: "London, UK",
-      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=800&q=80"
+      title: "PREMIUM PACKAGE",
+      features: [
+        "2 Photographers + 2 Videographers + 1 Candid Photographer",
+        "Complete Event Coverage: Haldi, Mehandi, Wedding, Reception",
+        "300+ Edited Photos",
+        "Cinematic film (15-25 Minutes)",
+        "Instagram Reels + Insta Story Highlights",
+        "Premium Album (30-40 leaf) + Framed Print",
+        "Custom Pen Drive Delivery"
+      ],
+      price: "$$$",
+      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80",
+      position: "right"
     }
   ];
 
@@ -55,7 +67,7 @@ const UsUk = () => {
               <p className="text-xs text-brand-bronze tracking-widest">WEDDINGS</p>
             </div>
             
-            <div className="w-24"></div> {/* Spacer for center alignment */}
+            <div className="w-24"></div>
           </div>
         </div>
       </div>
@@ -63,41 +75,73 @@ const UsUk = () => {
       {/* Main Content */}
       <div className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-6xl font-light text-center text-brand-cream tracking-wider mb-8">
-            US & UK
-          </h1>
-          <p className="text-xl text-center text-brand-cream/80 mb-16 max-w-3xl mx-auto font-light">
-            Elegant and timeless weddings across the United States and United Kingdom
-          </p>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-aboreto font-light text-center text-brand-cream tracking-wider mb-4">
+              OUR <em className="text-brand-bronze">Services</em>
+            </h1>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-aboreto font-light text-center text-brand-bronze tracking-wider">
+              in UK & US
+            </h2>
+            <div className="w-24 h-px bg-brand-bronze mx-auto mt-8"></div>
+          </div>
 
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {westernProjects.map((project, index) => (
-              <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative overflow-hidden rounded-lg shadow-2xl bg-brand-darkGreen h-96">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-darkestGreen/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-6 left-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <h3 className="text-xl font-light tracking-wide mb-2">{project.title}</h3>
-                    <p className="text-brand-bronze text-sm tracking-wider">{project.location}</p>
+          {/* Packages */}
+          <div className="space-y-16">
+            {packages.map((pkg, index) => (
+              <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${pkg.position === 'left' ? 'lg:flex-row-reverse' : ''}`}>
+                  {/* Package Details */}
+                  <div className={`${pkg.position === 'left' ? 'lg:order-2' : ''}`}>
+                    <h3 className="text-3xl sm:text-4xl font-aboreto font-light text-brand-bronze tracking-wider mb-8">
+                      {pkg.title}
+                    </h3>
+                    <ul className="space-y-3 mb-8">
+                      {pkg.features.map((feature, idx) => (
+                        <li key={idx} className="text-brand-cream/90 text-lg leading-relaxed flex items-start">
+                          <span className="text-brand-bronze mr-3">•</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="text-4xl font-aboreto font-light text-brand-bronze tracking-wider">
+                      {pkg.price}
+                    </div>
+                  </div>
+
+                  {/* Package Image */}
+                  <div className={`${pkg.position === 'left' ? 'lg:order-1' : ''}`}>
+                    <div className="w-full h-96 bg-brand-darkGreen rounded-lg overflow-hidden shadow-2xl">
+                      <img
+                        src={pkg.image}
+                        alt={pkg.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
+                
+                {/* Divider */}
+                {index < packages.length - 1 && (
+                  <div className="w-full h-px bg-brand-bronze/30 mx-auto mt-16"></div>
+                )}
               </div>
             ))}
           </div>
 
-          {/* CTA Section */}
+          {/* Hire Us Button */}
           <div className="text-center mt-20">
-            <h3 className="text-2xl font-light text-brand-cream tracking-wider mb-6">
-              Planning a destination wedding in the US or UK?
-            </h3>
-            <button className="bg-brand-bronze/10 text-brand-bronze px-8 py-3 rounded-full border border-brand-bronze/30 hover:bg-brand-bronze/20 transition-colors tracking-wide">
-              Let's Talk
-            </button>
+            <div className="flex justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center w-20 h-20 bg-brand-bronze text-white rounded-full hover:bg-brand-bronze/90 transition-all duration-300 shadow-lg group"
+              >
+                <span className="text-lg font-light tracking-wide group-hover:scale-110 transition-transform">
+                  H
+                </span>
+              </a>
+            </div>
+            <p className="text-brand-cream/80 text-sm mt-4 tracking-wide">Hire Us!</p>
           </div>
         </div>
       </div>
