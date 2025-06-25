@@ -3,7 +3,7 @@ import React from "react";
 
 const ExperienceSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-brand-darkGreen to-brand-darkestGreen">
+    <section className="py-20 bg-brand-darkestGreen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* Left Image - positioned higher */}

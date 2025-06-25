@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import India from "./pages/India";
 import UsUk from "./pages/UsUk";
 import Contact from "./pages/Contact";
+import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 import LoadingScreen from "./components/LoadingScreen";
 
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/india" element={<India />} />
             <Route path="/us-uk" element={<UsUk />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

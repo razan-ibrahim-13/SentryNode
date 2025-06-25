@@ -1,8 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  
   const backgroundImages = [
     "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=2000&q=80",
     "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=2000&q=80",
@@ -16,7 +19,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
@@ -31,8 +34,12 @@ const HeroSection = () => {
     );
   };
 
-  const goToImage = (index: number) => {
-    setCurrentImageIndex(index);
+  const handleBookSession = () => {
+    navigate('/contact');
+  };
+
+  const handleViewPortfolio = () => {
+    navigate('/portfolio');
   };
 
   return (
@@ -58,45 +65,48 @@ const HeroSection = () => {
             WEDDINGS
           </p>
           
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto mb-12">
             <p className="text-base sm:text-lg text-brand-cream/80 leading-relaxed font-light">
               Capturing the essence of your love story through timeless photography. 
               Where emotions meet artistry, creating memories that last forever.
             </p>
           </div>
+
+          {/* Modern CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button 
+              onClick={handleBookSession}
+              className="group relative overflow-hidden bg-brand-bronze text-white px-8 py-4 rounded-full hover:bg-brand-bronze/90 transition-all duration-300 text-lg font-light tracking-wide shadow-lg transform hover:scale-105"
+            >
+              <span className="relative z-10">Book Your Session</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </button>
+            <button 
+              onClick={handleViewPortfolio}
+              className="group relative overflow-hidden bg-transparent text-brand-cream px-8 py-4 rounded-full border-2 border-brand-cream hover:bg-brand-cream hover:text-brand-darkGreen transition-all duration-300 text-lg font-light tracking-wide transform hover:scale-105"
+            >
+              <span className="relative z-10">View Portfolio</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-cream/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Manual Navigation Controls */}
+      {/* Simple Navigation Controls */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
           {/* Previous Button */}
           <button
             onClick={prevImage}
-            className="p-2 rounded-full bg-brand-darkGreen/50 text-brand-cream hover:bg-brand-darkGreen/70 transition-all duration-300"
+            className="p-3 rounded-full bg-brand-darkGreen/30 text-brand-cream hover:bg-brand-darkGreen/50 transition-all duration-300 backdrop-blur-sm border border-brand-cream/20"
           >
             <ChevronLeft size={20} />
           </button>
 
-          {/* Dot Indicators */}
-          <div className="flex space-x-2">
-            {backgroundImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToImage(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentImageIndex 
-                    ? 'bg-brand-bronze' 
-                    : 'bg-brand-cream/50 hover:bg-brand-cream/70'
-                }`}
-              />
-            ))}
-          </div>
-
           {/* Next Button */}
           <button
             onClick={nextImage}
-            className="p-2 rounded-full bg-brand-darkGreen/50 text-brand-cream hover:bg-brand-darkGreen/70 transition-all duration-300"
+            className="p-3 rounded-full bg-brand-darkGreen/30 text-brand-cream hover:bg-brand-darkGreen/50 transition-all duration-300 backdrop-blur-sm border border-brand-cream/20"
           >
             <ChevronRight size={20} />
           </button>
