@@ -74,5 +74,10 @@ export const api = {
     apiFetch(`/alerts/${alertId}/acknowledge`, {
       method: 'PATCH',
     }),
+
+  clearAllAlerts: () =>
+    apiFetch('/alerts/clear-all', {
+      method: 'POST',
+    }),
 };
 
